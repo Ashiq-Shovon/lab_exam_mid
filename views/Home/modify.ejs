@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit page</title>
+</head>
+<body>
+	<div>
+		<h1>Edit Personal Info</h1> 		
+	</div>
+
+	<a href="/home/profile"> Back to info</a> 
+	
+
+	<form method="post">
+		<table>
+			<tr>
+				<td>Id</td>
+				<td><input type="text" readonly name="id" value="<%=user.id%>"></td>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username" value="<%=user.username%>"></td>
+			</tr>
+			<tr>
+				<td>Employer_name</td>
+				<td><input type="text" name="employer_name" value="<%=user.employer_name%>"></td>
+			</tr>
+			<tr>
+				<td>Company_name</td>
+				<td><input type="text" name="company_name" value="<%=user.company_name%>"></td>
+			</tr>
+			<tr>
+				<td>Contact_no</td>
+				<td><input type="text" name="contact_no" value="<%=user.contact_no%>"></td>
+			</tr>
+			<tr>
+				<td>Password :</td>
+				<td><input type="password" name="password" value="<%=user.password%>"></td>
+			</tr>
+			<tr>
+				<td>Type :</td>
+				<td><input type="text" name="type" value="<%=user.type%>"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="Update"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

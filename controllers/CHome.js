@@ -59,14 +59,14 @@ router.get('/profile', function(req, res){
 })
 
 
-router.get('/edit/:id', function(req, res){
+router.get('/modify', function(req, res){
 	
-	userModel.getById(req.params.id, function(result){
-		res.render('home/edit', {user: result});
+	userModel.getByUname(req.cookies['username'], function(result){
+		res.render('home/modify', {user: result});
 	});
 })
 
-router.post('/edit/:id', function(req, res){
+router.post('/modify', function(req, res){
 	
 	var user = {
 		username: req.body.username,
@@ -80,9 +80,9 @@ router.post('/edit/:id', function(req, res){
 
 	userModel.update(user, function(status){
 		if(status){
-			res.redirect('/home/alluser');
+			res.redirect('/home/modify');
 		}else{
-			res.redirect('/home/edit/'+req.params.id);
+			res.redirect('/home');
 		}
 	});
 })
@@ -164,7 +164,7 @@ userModel.insert(user, function(status){
 	}else{
 		res.redirect('/home/insert');
 	}
-});
+ });
 })
 
 
